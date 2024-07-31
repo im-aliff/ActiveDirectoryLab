@@ -9,6 +9,8 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 - Create organizational units (OUs) for IT and HR departments.
 - Add users Jenny Smith (jsmith) and Terry Smith (tsmith) to their respective OUs.
 - Demonstrate basic AD management tasks.
+##Network Diagram
+<img width="723" alt="Screenshot 2024-07-31 at 6 21 29 PM" src="https://github.com/user-attachments/assets/42b58b5f-9158-4a32-a00d-881d13a4f1e1">
 
 ## Prerequisites
 - Windows Server 2022 installation media or ISO.
