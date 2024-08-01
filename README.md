@@ -70,16 +70,35 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 
 3. **Set Up Active Directory**:
    1. Hit the `Windows` key, click on `Windows Administrative Tools`, and click on `Server Manager`.
+![image](https://github.com/user-attachments/assets/54d68795-525e-4f3e-a1f5-9c4c4ea350f8)
+
    2. At the top-right corner, click `Manage`, then click `Add Roles and Features`.
-   3. Click `Next`, and make sure that the `Role-based or feature-based installation` radio button is selected, click `Next`, then click `Next` again.
-   4. Click on `Active Directory Domain Services`, then click on `Add features`, click `Next` until you see `Install`, then click `Install`.
-   5. After installation has been completed, close the window.
+![Screenshot 2024-07-31 145228](https://github.com/user-attachments/assets/8b3785cd-0db3-423e-992d-dc67862ceb1d)
+![Screenshot 2024-07-31 145304](https://github.com/user-attachments/assets/85c355d8-b87c-411e-a7e6-6036e854448b)
+![Screenshot 2024-07-31 145440](https://github.com/user-attachments/assets/f5d55fbd-48b7-4ede-9feb-bdb14157b007)
+   4. Click `Next`, and make sure that the `Role-based or feature-based installation` radio button is selected, click `Next`, then click `Next` again.
+![Screenshot 2024-07-31 145551](https://github.com/user-attachments/assets/77b8c57f-2d65-454c-b1e5-8b130810f486)
+   5. Click on `Active Directory Domain Services`, then click on `Add features`, click `Next` until you see `Install`, then click `Install`.
+![Screenshot 2024-07-31 145732](https://github.com/user-attachments/assets/05d9c573-0b09-4fd0-b174-4d5c0f9db6f2)
+
+   6. After installation has been completed, close the window.
 
 4. **Promote to Domain Controller**:
+![Screenshot 2024-07-31 145847](https://github.com/user-attachments/assets/7dbf9be1-076d-4b47-8273-5b4b1dfb46af)
+
    1. In the `Server Manager` window, click the flag icon that is beside `Manage`, and click the blue `Promote this server to a domain controller` text.
+![Screenshot 2024-07-31 145927](https://github.com/user-attachments/assets/2f44ccfa-eadd-414a-9b19-c33688af037a)
+![Screenshot 2024-07-31 150014](https://github.com/user-attachments/assets/2f37b0ea-1f7f-48b4-a91e-5d97f8ccd1d7)
+
    2. Click the `Add a new forest` radio button to create a brand-new domain, and type in whatever name you want, followed by a `.` and some text (such as the word `local`) in the text box next to the `Root domain name:` text, and click `Next`.
+![Screenshot 2024-07-31 151136](https://github.com/user-attachments/assets/392eaf65-191a-4d23-85d1-2a72b10dbcfb)
+
    3. Leave all options as default, in the `Password:` field, type in a good password, then in the `Confirm password:` field, re-enter your password, then click `Next` until you see the `Install` option, then click `Install`.
+![Screenshot 2024-07-31 151609](https://github.com/user-attachments/assets/03a96edd-cf01-4b7e-8ada-d3c75123ff5b)
+
    4. Once the installation is completed, the machine will automatically restart.
+![Screenshot 2024-07-31 151949](https://github.com/user-attachments/assets/512d8da8-f66b-4a9e-8b15-b74e9e11211d)
+
    5. Go to log in to the Windows Server 2022 machine, and if you notice `Domain\Administrator`, it means you have successfully installed Active Directory Domain Services, and that this machine has been successfully promoted to a Domain Controller.
 
 1. **Install Windows 10**:
@@ -103,20 +122,47 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 
 3. **Join Windows 10 to the Domain**:
    - Right-click on `This PC` and select `Properties`.
+![Screenshot 2024-07-31 155634](https://github.com/user-attachments/assets/fa185e68-fb2c-45de-8735-d34551fa45d0)
+
+![Screenshot 2024-07-31 155726](https://github.com/user-attachments/assets/3521aa94-c4de-4a83-b929-fb380f30520d)
+
    - Click on `Change settings` next to the computer name.
-   - Click `Change` and select `Domain`, then enter the domain name (e.g., `example.com`).
+![image](https://github.com/user-attachments/assets/957f3d0b-1bd7-47e2-9b44-7bc7b766de91)
+
+   - Click `Change` and select `Domain`, then enter the domain name (e.g., `xplore.local`).
+![Screenshot 2024-07-31 155940](https://github.com/user-attachments/assets/93b65bc5-c58c-41e0-b52b-a1cf352ea5ee)
+![Screenshot 2024-07-31 160310](https://github.com/user-attachments/assets/996c3fbd-9d5e-430b-9efd-e4f7f2dc5e92)
+![Screenshot 2024-07-31 160429](https://github.com/user-attachments/assets/748ba076-089b-4637-80ff-64ad5ca81be1)
+
+     FYI: There will be an error due to DNS server which is set to 8.8.8.8, We need to change it to 192.168.10.7 under network and connection.
+![Screenshot 2024-07-31 160723](https://github.com/user-attachments/assets/666d90aa-cdd6-46e1-a979-a2ccb3b05549)
+![Screenshot 2024-07-31 160901](https://github.com/user-attachments/assets/e055b7fb-9e9a-465b-a152-e3658fc1a7a3)
+
    - Provide domain administrator credentials to join the domain and restart the computer.
 
 ### Step 3: Create Organizational Units and Users
 
 1. **Create Organizational Units**:
+![Screenshot 2024-07-31 152240](https://github.com/user-attachments/assets/11d59ff1-76a3-427e-9fce-d9dcb4582ba8)
+
    - Open `Active Directory Users and Computers` on the Domain Controller.
-   - Right-click on the domain name (e.g., `example.com`), select `New`, and then `Organizational Unit`.
+![Screenshot 2024-07-31 153152](https://github.com/user-attachments/assets/e1ed2042-9e13-4b49-80a7-b4613ca84d3e)
+
+   - Right-click on the domain name (e.g., `xplore.local`), select `New`, and then `Organizational Unit`.
+![Screenshot 2024-07-31 153330](https://github.com/user-attachments/assets/21150649-b87d-4865-aa35-dac311c38f35)
+
    - Create OUs named `IT` and `HR`.
 
 2. **Add Users**:
-   - Right-click on the `IT` OU, select `New`, and then `User`.
+![Screenshot 2024-07-31 153408](https://github.com/user-attachments/assets/0ce68507-a73f-4062-b31d-fed24c43a64d)
+
+   - Right-click on the `IT` OU, select `New`, and then `User`.![Screenshot 2024-07-31 153611](https://github.com/user-attachments/assets/134f88d9-1a6c-4a70-a6b3-352242260589)
+![Screenshot 2024-07-31 153750](https://github.com/user-attachments/assets/31645225-0db3-4ad4-917b-689dd07ebf1e)
+![Screenshot 2024-07-31 153830](https://github.com/user-attachments/assets/78fb9efa-7ced-4337-8ebe-016a783a0e0e)
+
    - Enter the user details for Jenny Smith (username: `jsmith`).
+![Screenshot 2024-07-31 154204](https://github.com/user-attachments/assets/fe247cdf-94f2-4a7c-bb4f-9e4ba00db4af)
+
    - Repeat the process for the `HR` OU to create a user for Terry Smith (username: `tsmith`).
 
 ## Usage
@@ -125,6 +171,9 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 
 - **Reset Password**:
   - Open `Active Directory Users and Computers`.
+![Screenshot 2024-07-31 153750](https://github.com/user-attachments/assets/d06228e5-9159-4bb2-ac16-770b7fc9f80b)
+
+
   - Navigate to the user (e.g., `jsmith`), right-click, and select `Reset Password`.
   - Enter and confirm the new password.
 
