@@ -17,6 +17,8 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 - Windows 10 installation media or ISO.
 - Virtualization software (e.g., VirtualBox, VMware) or physical hardware for installation.
 - Basic understanding of networking and system administration.
+![Design](https://github.com/user-attachments/assets/1dbe5678-4886-42e2-8a40-fc16ed25b633)
+
 
 ## Installation Steps
 
