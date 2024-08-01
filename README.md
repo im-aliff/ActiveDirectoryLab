@@ -18,8 +18,6 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 - Windows 10 installation media or ISO.
 - Virtualization software (e.g., VirtualBox, VMware) or physical hardware for installation.
 - Basic understanding of networking and system administration.
-![Design](https://github.com/user-attachments/assets/1dbe5678-4886-42e2-8a40-fc16ed25b633)
-
 
 ## Installation Steps
 
@@ -27,11 +25,16 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 1. **Create 2 Different Virtual Machines**:
    - Create a Windows 10 machine (target-PC).
    - Create a Windows Server 2022 machine (Active Directory Domain Controller).
+![Design](https://github.com/user-attachments/assets/1dbe5678-4886-42e2-8a40-fc16ed25b633)
 
 2. **Create a NAT Network in VirtualBox**:
    - Open VirtualBox, go to `File` > `Preferences` > `Network` > `NAT Networks`.
    - Click the `+` icon to add a new NAT network.
    - Name the network `AD-Project` and set the IP range to `192.168.10.0/24`.
+![image](https://github.com/user-attachments/assets/d723e97b-3cb9-4326-a883-429a3962b7a9)
+
+![image](https://github.com/user-attachments/assets/b87ee161-caa8-43f4-a0f4-19fc80fa04d3)
+
 
 3. **Configure Network Settings for Virtual Machines**:
    - For each virtual machine (Windows 10 and Windows Server 2022):
@@ -40,6 +43,10 @@ This project demonstrates the setup and management of an Active Directory (AD) e
      - In the `Adapter 1` tab, click inside the `Attached to:` dropdown menu and choose `NAT Network`.
      - In the `Name` dropdown menu, select the NAT network `AD-Project` created in the previous step.
      - Click `OK`.
+![image](https://github.com/user-attachments/assets/bb97aef5-e724-48fd-a6c8-71e39c29b49a)
+![image](https://github.com/user-attachments/assets/bab14702-4417-4c87-bb66-a91a7f9e1e75)
+
+
 
 ### Step 1: Install Windows Server 2022 and Promote to Domain Controller
 
@@ -58,6 +65,7 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 2. **Change Hostname to `ADDC01`**:
    1. In the Windows taskbar, search for `PC`, click `Properties`, then click the `Rename this PC` button.
    2. Type in `ADDC01`, click `Next`, then click `Restart now`.
+![image](https://github.com/user-attachments/assets/48d7e477-8e82-47d3-9287-e2a4e76d5635)
 
 3. **Set Up Active Directory**:
    1. Hit the `Windows` key, click on `Windows Administrative Tools`, and click on `Server Manager`.
@@ -77,6 +85,7 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 
 1. **Install Windows 10**:
    - Boot from the installation media and follow the on-screen instructions to install Windows 10.
+![image](https://github.com/user-attachments/assets/49647c1d-9a84-487c-8493-e642c80d3889)
 
 2. **Change Hostname to `target-PC`**:
    - Follow the same steps as for changing the server name:
