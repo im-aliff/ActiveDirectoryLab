@@ -65,6 +65,7 @@ This project demonstrates the setup and management of an Active Directory (AD) e
 2. **Change Hostname to `ADDC01`**:
    1. In the Windows taskbar, search for `PC`, click `Properties`, then click the `Rename this PC` button.
    2. Type in `ADDC01`, click `Next`, then click `Restart now`.
+      
 ![image](https://github.com/user-attachments/assets/48d7e477-8e82-47d3-9287-e2a4e76d5635)
 
 3. **Set Up Active Directory**:
@@ -81,10 +82,18 @@ This project demonstrates the setup and management of an Active Directory (AD) e
    4. Once the installation is completed, the machine will automatically restart.
    5. Go to log in to the Windows Server 2022 machine, and if you notice `Domain\Administrator`, it means you have successfully installed Active Directory Domain Services, and that this machine has been successfully promoted to a Domain Controller.
 
-### Step 2: Set Up Windows 10 PC
-
 1. **Install Windows 10**:
    - Boot from the installation media and follow the on-screen instructions to install Windows 10.
+   - Set the static IP address for Windows 10 (target-PC):
+     1. Hit the `Windows` key, type in `cmd`, and hit `Enter`.
+     2. In the command prompt, type `ipconfig` and hit `Enter` to check the IP address.
+     3. At the right end of the taskbar, right-click the `network` icon and click `Open Network & Internet settings`.
+     4. Scroll down and click on `Change adapter options`, right-click the network adapter, and click on `Properties`.
+     5. Double-click `Internet Protocol Version 4 (TCP/IPv4)`, and click the `Use the following IP address:` radio button.
+     6. In the `IP address` field, type in `192.168.10.100`, in the `Subnet mask` section, type in `255.255.255.0`, and in the `Default gateway` section, type in `192.168.10.1`.
+     7. In the `Preferred DNS server:` section, type in `8.8.8.8`, then click `OK`, and close the window.
+     8. In the command prompt, enter `ipconfig` to verify that the IPv4 Address is `192.168.10.100`.
+
 ![image](https://github.com/user-attachments/assets/49647c1d-9a84-487c-8493-e642c80d3889)
 
 2. **Change Hostname to `target-PC`**:
